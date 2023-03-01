@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --Dividers: hsl(240, 5%, 91%);
+  --subtitle: hsl(237, 12%, 33%);
+  --paragraphs: hsl(240, 6%, 50%);
+  --hoverText: hsl(14, 88%, 65%);
+  --title: hsl(238, 29%, 16%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+p {
+  font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
+}
+h1,
+summary {
+  font-weight: 700;
+}
+h1 {
+  font-size: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+}
+summary {
+  font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  padding: 100px 20px;
+}
+.card {
+  background-color: white;
+  position: relative;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, auto));
+
+  width: 900px;
+  box-shadow: 0px 5px 7px 5px hsla(236, 31%, 20%, 0.363);
+}
+.card__img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 800px 800px;
+  background-repeat: no-repeat;
+  background-position: -400px -230px;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  overflow: hidden;
+}
+.card__img-box > img {
+  right: 90%;
+  top: 175px;
+  position: absolute;
+}
+.card__img-box > picture > img {
+  margin: 40px 40px 40px -80px;
+}
+
+.card__faq {
+  margin: 60px 20px 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+.card__faq h1 {
+  margin-bottom: 20px;
+}
+.faq__content {
+  position: absolute;
+  width: 90%;
+}
+.faq__content > * {
+  border-bottom: 1px solid var(--Dividers);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.faq__content details summary {
+  position: relative;
+  cursor: pointer;
+  list-style-type: none;
+}
+.faq__content details summary:hover {
+  color: var(--hoverText);
+  transition: 0.5s;
+}
+.faq__content details summary::after {
+  position: absolute;
+  content: url("./images/icon-arrow-down.svg");
+  right: -10px;
+  transition: 0.5s;
+}
+
+.faq__content details[open] summary::after {
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+
+.faq__content details p {
+  width: 100%;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .card {
+    margin-top: 60px;
+  }
+  .card__img-box {
+    background-image: url("./images/bg-pattern-mobile.svg");
+    background-size: 300px;
+    background-position: center -20px;
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+  .card__img-box > img {
+    display: none;
+  }
+  .card__img-box > picture > img {
+    margin: -140px auto 0 auto;
+
+    width: 100%;
+  }
+  .card__faq {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .faq__content {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .card__faq > h1 {
+    margin: 30px 0;
+  }
+  .faq__content > * {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .card {
+    width: 300px;
+  }
+  .card__img-box {
+    background-size: 250px;
+    background-position: 30px -20px;
+  }
+  .card__img-box > picture > img {
+    margin-top: -110px;
+    width: 80%;
+  }
+  .card__faq {
+    width: 80%;
+  }
+}
+/*Att*/
+.attribution {
+  padding: 40px;
+  font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

@@ -15,8 +15,7 @@
 p {
   font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
 }
-h1,
-summary {
+h1 {
   font-weight: 700;
 }
 h1 {
@@ -99,8 +98,11 @@ summary {
   transition: 0.5s;
   transform: rotate(180deg);
 }
-
+.faq__content details[open] {
+  font-weight: 700;
+}
 .faq__content details p {
+  font-weight: 400;
   width: 100%;
   margin-top: 5px;
 }
